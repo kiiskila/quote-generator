@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quote of the day</title>
+</head>
+
+
+<body>
+
+    <div id="quote" class="text-center pt-4">
+        <!-- gets the quote from the website brainyquote.com -->
+        <script type="text/javascript" src="https://www.brainyquote.com/link/quotebr.js"></script>
+    </div>
+
+    <script>
+
+        var date = new Date();
+
+        const months = 
+        [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ]
+
+        // gets the content from the div storing our quote
+        var contents = document.getElementById("quote").innerText;
+
+        // splits the lines of our quote
+        var lines = contents.split("\n")
+
+        // clears the div
+        document.getElementById("quote").innerHTML = "";
+
+        // prints the lines from our quote
+        document.getElementById("quote").innerHTML += "<h1 class='pt-2'>Quote of the day</h1>";
+        document.getElementById("quote").innerHTML += "<h2>" + months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear() + "</h2>";
+        document.getElementById("quote").innerHTML += "<hr />"
+        document.getElementById("quote").innerHTML += "<h3 class='pt-2'>" + lines[1] + "</h3>";
+        document.getElementById("quote").innerHTML += "<h4 class='pt-2'> -" + lines[2] + "</h4>";
+
+    </script>
+
+
+    
+</body>
+</html>
